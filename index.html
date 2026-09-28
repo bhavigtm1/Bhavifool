@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Name | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff8f0;
+      color: #222;
+      line-height: 1.6;
+    }
+
+
+    header {
+      background: #24104f;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      color: #ffcc70;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc70;
+    }
+
+    .hero {
+      min-height: 90vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 60px 8%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff6b6b,
+          #ff9f43,
+          #feca57,
+          #48dbfb,
+          #5f27cd
+        );
+
+      background-size: 300% 300%;
+
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+
+    }
+
+
+    .hero-content {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 60px;
+
+      max-width: 1100px;
+
+      color: white;
+    }
+
+
+    .profile-picture {
+
+      width: 270px;
+      height: 270px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      padding: 8px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff200,
+          #ff6b6b,
+          #5f27cd,
+          #48dbfb
+        );
+
+      box-shadow:
+        0 0 0 8px rgba(255,255,255,0.25),
+        0 20px 45px rgba(0,0,0,0.3);
+
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    .profile-picture img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      background: white;
+
+      display: block;
+    }
+
+
+    /* =====================================
+       HERO TEXT
+    ====================================== */
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 5rem;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 5px;
+
+      text-shadow:
+        4px 4px 0 #5f27cd;
+    }
+
+    .hero h1 span {
+      color: #fff200;
+    }
+
+    .hero h2 {
+
+      font-size: 1.5rem;
+
+      margin-bottom: 20px;
+
+      font-weight: 500;
+    }
+
+    .hero p {
+
+      font-size: 1.1rem;
+
+      margin-bottom: 30px;
+    }
+
+
+    .btn {
+
+      display: inline-block;
+
+      padding: 14px 30px;
+
+      background: #24104f;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 30px;
+
+      font-weight: 600;
+
+      transition: 0.3s;
+
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+
+      background: white;
+
+      color: #24104f;
+
+      transform: scale(1.08);
+    }
+
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      text-align: center;
+
+      font-size: 3rem;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 50px;
+
+      color: #5f27cd;
+    }
+
+
+    .about-container {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 30px;
+    }
+
+    .about-card {
+
+      background: white;
+
+      padding: 35px;
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.1);
+
+      transition: 0.3s;
+    }
+
+    .about-card:first-child {
+      border-top: 8px solid #ff6b6b;
+    }
+
+    .about-card:last-child {
+      border-top: 8px solid #48dbfb;
+    }
+
+    .about-card:hover {
+
+      transform: translateY(-10px);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .about-card h3 {
+
+      color: #5f27cd;
+
+      font-size: 1.5rem;
+
+      margin-bottom: 15px;
+    }
+
+
+    .skills-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .skill {
+
+      padding: 30px;
+
+      text-align: center;
+
+      border-radius: 20px;
+
+      color: white;
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+
+      transform:
+        translateY(-10px)
+        rotate(1deg);
+
+      box-shadow:
+        0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .skill:nth-child(1) {
+      background: #ff6b6b;
+    }
+
+    .skill:nth-child(2) {
+      background: #ff9f43;
+    }
+
+    .skill:nth-child(3) {
+
+      background: #feca57;
+
+      color: #333;
+    }
+
+    .skill:nth-child(4) {
+      background: #48dbfb;
+    }
+
+    .skill:nth-child(5) {
+      background: #1dd1a1;
+    }
+
+    .skill:nth-child(6) {
+      background: #5f27cd;
+    }
+
+    .skill h3 {
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 2rem;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 10px;
+    }
+
+
+    #hobbies {
+      background: #24104f;
+    }
+
+    #hobbies .section-title {
+      color: #ffcc70;
+    }
+
+    .hobbies {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+    }
+
+    .hobby {
+
+      padding: 18px 28px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff6b6b,
+          #ff9f43
+        );
+
+      color: white;
+
+      font-weight: 600;
+
+      transition: 0.3s;
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .hobby:hover {
+
+      transform: scale(1.1);
+
+      background:
+        linear-gradient(
+          135deg,
+          #48dbfb,
+          #5f27cd
+        );
+    }
+
+
+    .goals-container {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+    .goal {
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.1);
+
+      transition: 0.3s;
+    }
+
+    .goal:hover {
+
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .goal:nth-child(1) {
+      border-left: 8px solid #ff6b6b;
+    }
+
+    .goal:nth-child(2) {
+      border-left: 8px solid #48dbfb;
+    }
+
+    .goal:nth-child(3) {
+      border-left: 8px solid #1dd1a1;
+    }
+
+    .goal:nth-child(4) {
+      border-left: 8px solid #5f27cd;
+    }
+
+    .goal h3 {
+
+      color: #5f27cd;
+
+      margin-bottom: 10px;
+    }
+
+
+    .contact {
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #5f27cd,
+          #341f97,
+          #24104f
+        );
+
+      color: white;
+    }
+
+    .contact .section-title {
+      color: #ffcc70;
+    }
+
+    .contact-info {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 25px;
+    }
+
+    .contact-box {
+
+      background:
+        rgba(255,255,255,0.12);
+
+      padding: 20px 30px;
+
+      border-radius: 15px;
+
+      backdrop-filter: blur(5px);
+
+      transition: 0.3s;
+    }
+
+    .contact-box:hover {
+
+      background:
+        rgba(255,255,255,0.25);
+
+      transform: translateY(-5px);
+    }
+
+
+    footer {
+
+      background: #120625;
+
+      color: #aaa;
+
+      text-align: center;
+
+      padding: 25px;
+    }
+
+    footer span {
+      color: #ffcc70;
+    }
+
+
+    @media (max-width: 900px) {
+
+      .hero-content {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 35px;
+      }
+
+      .hero-text {
+        max-width: 700px;
+      }
+
+      .profile-picture {
+
+        width: 230px;
+
+        height: 230px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .skills-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 15px 5%;
+      }
+
+      nav {
+
+        flex-direction: column;
+
+        gap: 15px;
+      }
+
+      nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+      }
+
+      .hero {
+
+        padding: 60px 6%;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .about-container {
+
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+      .goals-container {
+
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+    }
+
+
+    @media (max-width: 450px) {
+
+      .profile-picture {
+
+        width: 190px;
+
+        height: 190px;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        font-size: 0.85rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        Bhavifool
+      </div>
+
+      <ul>
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#learning">Learning</a>
+        </li>
+
+        <li>
+          <a href="#hobbies">Hobbies</a>
+        </li>
+
+        <li>
+          <a href="#goals">Goals</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+
+      <div class="profile-picture">
+
+        <img
+          src=rabbit.gif
+          alt="Animated cartoon profile character"
+        >
+
+      </div>
+
+
+      <div class="hero-text">
+
+        <h1>
+        Hi, this is
+        <br>
+        <span>Bhavya Gautam</span>
+        </br>
+        </h1>
+
+        <h2>
+          🎓 College Student • 💻 Learner • 🚀 Future Developer
+        </h2>
+
+        <p>
+
+          Welcome to my whimsy little corner of life!
+
+          I'm passionate about technology, creativity and
+          learning new things every day.
+
+        </p>
+
+        <a
+          href="#about"
+          class="btn"
+        >
+          Explore My Journey →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About Me
+    </h2>
+
+
+    <div class="about-container">
+
+
+      <div class="about-card">
+
+        <h3>
+          👋 Who Am I?
+        </h3>
+
+        <p>
+
+          Greetings! I'm
+          <strong>Bhavya Gautam</strong>.
+
+          I am currently studying
+          <strong>CS and AI</strong>
+          at
+          <strong>Scaler School of Technology</strong>.
+
+        </p>
+
+        <br>
+
+        <p>
+
+          I enjoy learning about technology,
+          exploring new ideas and improving
+          my skills through practical projects.
+
+        </p>
+
+      </div>
+
+
+      <div class="about-card">
+
+        <h3>
+          🎓 My College Life
+        </h3>
+
+        <p>
+
+          College has been great so far, it's given me opportunities
+          to explore different subjects,
+          meet new people and discover
+          my interests.
+
+        </p>
+
+        <br>
+
+        <p>
+
+          Currently, I'm focusing on developing
+          my technical knowledge and becoming
+          a better person each day.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <section id="learning">
+
+    <h2 class="section-title">
+      What I'm Learning
+    </h2>
+
+
+    <div class="skills-grid">
+
+
+      <div class="skill">
+
+        <h3>
+          HTML
+        </h3>
+
+        <p>
+          Building the structure of modern
+          webpages.
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          CSS
+        </h3>
+
+        <p>
+          Designing beautiful and responsive
+          websites.
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          JavaScript
+        </h3>
+
+        <p>
+          Learning programming and website
+          interactivity.
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          Flexbox
+        </h3>
+
+        <p>
+          Creating flexible and responsive
+          layouts.
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          CSS Grid
+        </h3>
+
+        <p>
+          Creating structured two-dimensional
+          layouts.
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          Programming
+        </h3>
+
+        <p>
+          Improving my logic and
+          problem-solving skills.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <section id="hobbies">
+
+    <h2 class="section-title">
+      My Hobbies
+    </h2>
+
+
+    <div class="hobbies">
+
+
+      <div class="hobby">
+       💃 Dancing
+      </div>
+
+
+      <div class="hobby">
+        🎵 Music
+      </div>
+
+
+      <div class="hobby">
+        📚 Reading
+      </div>
+
+
+      <div class="hobby">
+        💻 Coding
+      </div>
+
+
+      <div class="hobby">
+        📷 Photography
+      </div>
+
+
+      <div class="hobby">
+        🏏 Sports
+      </div>
+
+
+      <div class="hobby">
+        ✈️ Travelling
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <section id="goals">
+
+    <h2 class="section-title">
+      My Future Goals
+    </h2>
+
+
+    <div class="goals-container">
+
+
+      <div class="goal">
+
+        <h3>
+          🚀 Become a Developer
+        </h3>
+
+        <p>
+
+          I want to become a skilled developer
+          and create useful applications that
+          solve real-world problems.
+
+        </p>
+
+      </div>
+
+
+      <div class="goal">
+
+        <h3>
+          💡 Build Amazing Projects
+        </h3>
+
+        <p>
+
+          I want to work on creative projects
+          that help me apply the knowledge
+          I gain.
+
+        </p>
+
+      </div>
+
+
+      <div class="goal">
+
+        <h3>
+          📈 Keep Improving
+        </h3>
+
+        <p>
+
+          I want to continuously improve my
+          coding, communication and
+          problem-solving abilities.
+
+        </p>
+
+      </div>
+
+
+      <div class="goal">
+
+        <h3>
+          🌟 Build My Career
+        </h3>
+
+        <p>
+
+          My long-term goal is to establish
+          a successful career in the
+          technology industry.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">
+      Let's Connect!
+    </h2>
+
+
+    <div class="contact-info">
+
+
+      <div class="contact-box">
+
+        📧
+        bhavya.26bcs10756@sst.scaler.com
+
+      </div>
+
+
+      <div class="contact-box">
+
+        💼
+        LinkedIn-www.linkedin.com/in/bhavya-gautam-64b9b6428
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <p>
+
+      Made with ❤️ by
+      <span>Bhavya Gautam</span>
+
+      | © 2026
+
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
